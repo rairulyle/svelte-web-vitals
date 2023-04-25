@@ -5,6 +5,8 @@ An Svelte wrapper that provides a simple way to enable [Core Web Vitals](https:/
 - [Vercel - Speed Insights](https://vercel.com/docs/concepts/speed-insights/api)
 - Others (coming soon)
 
+<img src="https://raw.githubusercontent.com/rairulyle/svelte-web-vitals/main/static/vercel-preview.png">
+
 ## Note
 
 As of the moment, the svelte wrapper is still in `development`. The current version only supports <strong>Vercel - Speed Insights</strong> as default. The next version will support other platforms such as Google Analytics, Google Tag Manager, and more.
