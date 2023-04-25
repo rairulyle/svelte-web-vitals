@@ -1,6 +1,6 @@
 {
 	"name": "@rairulyle/svelte-web-vitals",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Svelte wrapper for web-vitals",
 	"scripts": {
 		"dev": "vite dev",
