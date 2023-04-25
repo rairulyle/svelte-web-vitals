@@ -1,1 +1,3 @@
-// Reexport your entry components here
+import  WebVitals from './WebVitals.svelte';
+
+export default WebVitals
