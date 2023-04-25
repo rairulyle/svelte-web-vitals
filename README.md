@@ -1,58 +1,50 @@
-# create-svelte
+# Svelte wrapper for Web Vitals
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+An Svelte wrapper that provides a simple way to enable [Core Web Vitals](https://web.dev/vitals/) metrics for the following platforms:
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+- [Vercel - Speed Insights](https://vercel.com/docs/concepts/speed-insights/api)
+- Others (coming soon)
 
-## Creating a project
+## Note
 
-If you're seeing this, you've probably already done this step. Congrats!
+As of the moment, the svelte wrapper is still in `development`. The current version only supports <strong>Vercel - Speed Insights</strong> as default. The next version will support other platforms such as Google Analytics, Google Tag Manager, and more.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Prerequisites
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+An analytics integration is required to use this package. Currently, only [Vercel - Speed Insights](https://vercel.com/docs/concepts/speed-insights) is supported.
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Installation
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm i @rairulyle/svelte-web-vitals -D
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+## Usage
 
-## Building
+1. import WebVitals to your root `+layout.svelte` file.
 
-To build your library:
+```svelte
+<script lang="ts">
+	import WebVitals from '@rairulyle/svelte-web-vitals';
+</script>
 
-```bash
-npm run package
+<WebVitals />
 ```
 
-To create a production version of your showcase app:
+2. Define the Analytics ID via `vite.config.ts` file. As of the moment, only Vercel is supported.
 
-```bash
-npm run build
+```ts
+export default defineConfig({
+	// Other configs here...
+	define: {
+		'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID)
+	}
+});
 ```
 
-You can preview the production build with `npm run preview`.
+## Roadmap
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+- [x] Vercel - Speed Insights
+- [ ] Google Analytics
+- [ ] Google Tag Manager
+- [ ] Others

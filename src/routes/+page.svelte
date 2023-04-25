@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import WebVitals from '$lib/WebVitals.svelte';
 </script>
 
