@@ -1,5 +1,7 @@
 # Svelte wrapper for Web Vitals
 
+[![npm version](https://badge.fury.io/js/@rairulyle%2Fsvelte-web-vitals.svg)](https://badge.fury.io/js/@rairulyle%2Fsvelte-web-vitals)
+
 An Svelte wrapper that provides a simple way to enable [Core Web Vitals](https://web.dev/vitals/) metrics for the following platforms:
 
 - [Vercel - Speed Insights](https://vercel.com/docs/concepts/speed-insights/api)
